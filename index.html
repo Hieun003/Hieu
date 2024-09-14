@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            mau=/^[a-zA-Z0-9]{6,8}$/;
+            chuoi=document.getElementById("user").value;
+            c=mau.test(chuoi);
+            matkhau=/^[a-z0-9]{8,}$/;
+            pass=document.getElementById("pass").value;
+            p=matkhau.test(pass);
+            MKLai = document.getElementById("passpefrom").value;
+            Email= /^[a-z0-9]+@[a-z]{3,}\.{2,}$/;
+            Gmail=document.getElementById("Email").value;
+            m=Email.test(Gmail);
+            sdt= /^0[1-9][0-9]{8}$/;
+            Sdt=document.getElementById("sdt").value;
+            s=sdt.test(Sdt);
+
+            kq=true;
+            // if(c==true && p==true && m==true && s==true && pass==MKLai){
+            //     alert("Dung");
+            //     return true;
+            // }
+            // else{
+            //     if(c==false){
+            //         document.getElementById("loi").innerHTML="Loi";
+            //     }
+            //     if(p==false){
+            //         document.getElementById("loiMK").innerHTML="Loi";
+            //     }
+            //     if(m==false){
+            //         document.getElementById("loiMail").innerHTML="Loi";
+            //     }
+            //     if(s==false){
+            //         document.getElementById("loisdr").innerHTML="Loi";
+            //     }
+            //     if(pass==MKLai){
+            //         document.getElementById("loiNhapLai").innerHTML="Loi";
+            //     }
+            //     return false;
+            // }
+            if(c==true){
+                document.getElementById("loi").innerHTML="";
+            }
+            else{
+                document.getElementById("loi").innerHTML="Loi";
+                kq=false;
+            }
+            if(p==true){
+                document.getElementById("loiMK").innerHTML="";
+            }
+            else{
+                document.getElementById("loiMK").innerHTML="Loi";
+                kq=false;
+            }
+            if(m==true){
+                document.getElementById("loiMail").innerHTML="";
+
+            }
+            else{
+                document.getElementById("loiMail").innerHTML="Loi";
+                kq=false;
+            }
+            if(s==true){
+                document.getElementById("loisdt").innerHTML="";
+            }
+            else{
+                document.getElementById("loisdt").innerHTML="Loi";
+                kq=false;
+            }
+            if(pass==MKLai){
+                document.getElementById("loiNhapLai").innerHTML="";
+            }
+            else{
+                document.getElementById("loiNhapLai").innerHTML="Loi";
+                kq=false
+            }
+            return kq
+            
+            
+            // kk= matkhau.test(pass);
+            // if(kq==true && kk==true){
+            //     alert("Dung");
+            //     return true;
+            // }
+            // else{
+            //     // if(kq==false){
+            //     // document.getElementById("loi").innerHTML="Loi";
+            //     // }
+            //     if(kk==false){
+            //     document.getElementById("loi").innerHTML="Loi";
+            //     }
+            //     return false;
+            // }
+
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="post" onsubmit="return check();">
+    <table>
+        <tr>
+            <td colspan="2">Đăng ký</td>
+        </tr>
+        
+        <!-- <tr>
+            <td><label for="name">Họ tên</label></td>
+            <td>
+                <input type="text" placeholder="Nhập họ tên" name="name" value="" id="name"> <label for="" id="loi"></label>
+            </td>
+        </tr> -->
+        <tr>
+            <td><label for="user">Tài khoản</label></td>
+            <td>
+                <input type="text" placeholder="Nhập tài khoản" name="user" value="" id="user"><label for="" id="loi"></label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="pass">Mật khẩu</label></td>
+            <td>
+                <input type="password" placeholder="Nhập mật khẩu" name="pass" value="" id="pass"><label for="" id="loiMK"></label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="passpefrom">Nhập lại mật khẩu</label></td>
+            <td>
+                <input type="password" placeholder="Nhập lại mật khẩu" name="passpefrom" value="" id="passpefrom"><label for="" id="loiNhapLai"></label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Email">Email</label></td>
+            <td>
+                <input type="text" placeholder="Email" name="Email" value="" id="Email"><label for="" id="loiMail"></label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="sdt">So dien thoai</label></td>
+            <td>
+                <input type="text" placeholder="sdt" name="sdt" value="" id="sdt"><label for="" id="loisdt"></label>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td>Giới tính</td>
+            <td>
+                <input type="radio" name="gt" value="gt">Nam
+                <input type="radio" name="gt" value="gt">Nữ
+            </td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td>
+                <select>
+                    <option value="1">Ngày 1</option>
+                    <option value="2">Ngày 2</option>
+                    <option value="3">Ngày 3</option>
+                    <option value="4">Ngày 4</option>
+                    <option value="5">Ngày 5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Sở thích</td>
+            <td>
+                <input type="checkbox" name="Xemphim" value="XP">Xem Phim
+                <input type="checkbox" name="Sport" value="Sport">Thể thao
+                <input type="checkbox" name="Web" value="Web">Web
+            </td>
+        </tr>
+
+        <tr>
+            <td>Địa chỉ</td>
+            <td>
+                <textarea name="diachi"></textarea>
+            </td>
+        </tr> -->
+
+        </table>
+        <input type="submit" name="luu" id="luu" value="luu">
+    </form>
+</body>
+</html>
